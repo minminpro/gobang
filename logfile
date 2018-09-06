@@ -1,0 +1,76 @@
+LOG:  database system was interrupted; last known up at 2018-07-10 14:42:10 CST
+LOG:  database system was not properly shut down; automatic recovery in progress
+LOG:  invalid record length at 0/35D6C70: wanted 24, got 0
+LOG:  redo is not required
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  syntax error at or near "ls" at character 1
+STATEMENT:  ls
+	;
+ERROR:  syntax error at or near "{" at character 19
+STATEMENT:  create table jobs {
+	  id INT SERIAL PRIMARY KEY NOT NULL,
+	  name TEXT NOT NULL,
+	  time CHAR(100) NOT NULL,
+	  increment bool not null
+	}
+ERROR:  syntax error at or near "SERIAL" at character 30
+STATEMENT:  create table jobs (
+	  id INT SERIAL PRIMARY KEY NOT NULL,
+	  name TEXT NOT NULL,
+	  time CHAR(100) NOT NULL,
+	  increment bool not null
+	)
+ERROR:  syntax error at or near "create" at character 124
+STATEMENT:  create table jobs (
+	  id SERIAL PRIMARY KEY NOT NULL,
+	  name TEXT NOT NULL,
+	  time CHAR(100) NOT NULL,
+	  increment bool
+	)
+	
+	create table executions {
+	  id SERIAL PRIMARY KEY NOT NULL,
+	  job_id INT NOT NULL,
+	  start_at TIME,
+	  end_at TIME,
+	  running bool NOT null
+	}
+ERROR:  syntax error at or near "create" at character 124
+STATEMENT:  create table jobs (
+	  id SERIAL PRIMARY KEY NOT NULL,
+	  name TEXT NOT NULL,
+	  time CHAR(100) NOT NULL,
+	  increment bool
+	)
+	
+	create table executions (
+	  id SERIAL PRIMARY KEY NOT NULL,
+	  job_id INT NOT NULL,
+	  start_at TIME,
+	  end_at TIME,
+	  running bool NOT null
+	)
+ERROR:  duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(jobs_id_seq, 2200) already exists.
+STATEMENT:  CREATE TABLE IF NOT EXISTS "jobs" ("id"  SERIAL , "running" BOOLEAN, "createdTime" TIMESTAMP WITH TIME ZONE, "startTime" TIMESTAMP WITH TIME ZONE, "endTime" TIMESTAMP WITH TIME ZONE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));
+ERROR:  duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(jobs_id_seq, 2200) already exists.
+STATEMENT:  CREATE TABLE IF NOT EXISTS "jobs" ("id"  SERIAL , "name" VARCHAR(255), "enabled" BOOLEAN, "createdTime" TIMESTAMP WITH TIME ZONE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));
+ERROR:  duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(jobs_id_seq, 2200) already exists.
+STATEMENT:  CREATE TABLE IF NOT EXISTS "jobs" ("id"  SERIAL , "name" VARCHAR(255), "enabled" BOOLEAN, "createdTime" TIMESTAMP WITH TIME ZONE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));
+ERROR:  duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(jobs_id_seq, 2200) already exists.
+STATEMENT:  CREATE TABLE IF NOT EXISTS "jobs" ("id"  SERIAL , "name" VARCHAR(255), "enabled" BOOLEAN, "createdTime" TIMESTAMP WITH TIME ZONE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));
+ERROR:  duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(jobs_id_seq, 2200) already exists.
+STATEMENT:  CREATE TABLE IF NOT EXISTS "jobs" ("id"  SERIAL , "name" VARCHAR(255), "enabled" BOOLEAN, "createdTime" TIMESTAMP WITH TIME ZONE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));
+ERROR:  duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(jobs_id_seq, 2200) already exists.
+STATEMENT:  CREATE TABLE IF NOT EXISTS "jobs" ("id"  SERIAL , "name" VARCHAR(255), "enabled" BOOLEAN, "createdTime" TIMESTAMP WITH TIME ZONE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));
+LOG:  autovacuum launcher shutting down
+LOG:  received smart shutdown request
+LOG:  shutting down
+LOG:  database system is shut down

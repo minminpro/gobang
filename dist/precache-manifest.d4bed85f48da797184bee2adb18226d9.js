@@ -32,7 +32,7 @@ self.__precacheManifest = [
     "url": "/app.bundle.js"
   },
   {
-    "revision": "6597afeca7ae9d6d9697",
+    "revision": "bcad25a5b9940cd56dd1",
     "url": "/ai.bundle.js"
   }
 ];
